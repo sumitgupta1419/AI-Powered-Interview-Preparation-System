@@ -20,9 +20,18 @@ const app = express();
 // =======================================
 // Middleware
 // =======================================
+// app.use(
+//   cors({
+//     origin: "*",
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://ai-powered-interview-preparation-system-qe2lrkow4.vercel.app",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
