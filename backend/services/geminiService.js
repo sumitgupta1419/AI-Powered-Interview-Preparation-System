@@ -85,13 +85,27 @@ Example
     console.log("=================================");
 
     return questions;
-  } catch (error) {
-    console.error("Gemini Question Generation Error");
-    console.error(error);
+  }
+  // catch (error) {
+  //   console.error("Gemini Question Generation Error");
+  //   console.error(error);
+catch (error) {
+  console.error("====================================");
+  console.error("Gemini Question Generation Error");
+  console.error(error);
+  console.error(error.message);
 
+  if (error.response) {
+    console.error(error.response);
+  }
+
+  console.error("====================================");
+
+  throw error;
+}
     throw new Error("Failed to generate interview questions.");
   }
-}
+
 
 // ===============================================
 // Evaluate Single Answer
