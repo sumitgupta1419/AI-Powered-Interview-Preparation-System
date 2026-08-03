@@ -103,8 +103,7 @@ catch (error) {
 
   throw error;
 }
-    throw new Error("Failed to generate interview questions.");
-  }
+   
 
 
 // ===============================================
@@ -113,7 +112,8 @@ catch (error) {
 async function evaluateAnswer(question, answer) {
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
+      // model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite",
     });
 
     const prompt = `
@@ -172,7 +172,7 @@ Do not return markdown.
 async function generateOverallFeedback(questions) {
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite ",
     });
 
     let interviewText = "";
